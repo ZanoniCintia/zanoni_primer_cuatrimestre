@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1553818802 source:/home/alumno/zanoni/getfloat/main.c
+	<stdio.h>
+	<stdlib.h>
+
