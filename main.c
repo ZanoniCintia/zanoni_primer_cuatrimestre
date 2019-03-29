@@ -1,64 +1,110 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-int getInt(char *mensaje,char *mensajeError,int minimo,int maximo, int reintentos, int *resultado);
-
-
-int isValidInt(int numero,int minimo,int maximo);
+#include <math.h>
 
 
 
+int indicarOperacion();
+int pedirNumero();
+int suma(int primerNumero,int segundoNumero);
+int resta(int primerNumero,int segundoNumero);
+int multiplicacion(int primerNumero, int segundoNumero);
+float division(int primerNumero, int segundoNumero);
 
 
-int main()
+
+int main(void)
 {
-    int numeroIngresado;
+    int operacionSeleccionada;
+    int primerNumero;
+    int segundoNumero;
+    int resultado;
 
-    getInt("ingrese el numero","error",0,100,2,&numeroIngresado);
-    printf("el numero ingresado es %d  :",numeroIngresado);
+    primerNumero=pedirNumero();
+    segundoNumero=pedirNumero();
+    operacionSeleccionada = indicarOperacion();
+
+    switch(operacionSeleccionada)
+    {
+        case 1:
+            printf("eligio suma");
+            resultado = suma(primerNumero,segundoNumero);
+            printf("\n la suma entre %d y %d es %d: ",primerNumero,segundoNumero,resultado);
+            break;
+        case 2:
+            printf("\n eligio resta");
+            resultado =resta(primerNumero,segundoNumero);
+            printf("\n la resta entre %d y %d es %d: ",primerNumero,segundoNumero,resultado);
+            break;
+        case 3:
+            printf("\n eligio multiplicacion");
+            resultado = multiplicacion(primerNumero,segundoNumero);
+            printf("\n la multiplicacion entre %d y %d es %d : ",primerNumero,segundoNumero,resultado);
+            break;
+        case 4:
+            printf("\n eligio division");
+            resultado = division(primerNumero,segundoNumero);
+            printf("\n la division entre %d y %d es %f :",primerNumero,segundoNumero,(float) resultado);
+            break;
+        case 5:
+            printf("\n eligio salir ");
+
+            break;
+    }
+
     return 0;
+
 }
 
-int isValidInt(int numero,int minimo,int maximo)
+int indicarOperacion()
 {
-    if(numero>=minimo && numero<=maximo)
+    int operaciones;
+    if(operaciones!=5)
     {
-        return 1;
+        printf("\n0 <calculadora> elija una operacion: ");
+        printf("\n1 suma ");
+        printf("\n2 resta ");
+        printf("\n3 multiplicacion ");
+        printf("\n4 division ");
+        printf("\n5 salir ");
+        printf("\n elija una opcion : ");
+        scanf("%d",&operaciones);
     }
-        return 0 ;
-
-
+    return operaciones;
 }
-
-
-
-int getInt(char *mensaje,char *mensajeError,int minimo,int maximo, int reintentos, int *resultado)
+int pedirNumero()
 {
-    int buffer;
-    int i;
-    int retorno=-1;
-
-    if(mensaje != NULL && mensajeError != NULL && resultado!= NULL && maximo>=minimo && reintentos>=0)
-    {
-        for(i=0;i<=reintentos;i++)
-        {
-            printf("%s", mensaje);
-            scanf("%d",&buffer);
-            if(isValidInt(buffer,minimo,maximo))
-            {
-                *resultado=buffer;
-                retorno=0;
-                break;
-            }
-            else
-            {
-                printf("%s", mensajeError);
-            }
-        }
-
-
-    }
-
-
-    return retorno;
+    int unNumero;
+    printf("ingrese un numero: ");
+    scanf("%d",&unNumero);
+    return unNumero;
 }
+
+int suma(int primerNumero,int segundoNumero)
+{
+    int resultado;
+    resultado = primerNumero + segundoNumero;
+
+    return resultado;
+}
+int resta(int primerNumero,int segundoNumero)
+{
+    int resultado;
+    resultado = primerNumero - segundoNumero;
+    return resultado;
+}
+int multiplicacion(int primerNumero, int segundoNumero)
+{
+    int resultado;
+    resultado = primerNumero * segundoNumero;
+    return resultado;
+
+}
+float division(int primerNumero,int segundoNumero)
+{
+    float resultado;
+    resultado=primerNumero/segundoNumero;
+    return resultado;
+}
+
+
