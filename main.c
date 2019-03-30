@@ -10,6 +10,7 @@ int suma(int primerNumero,int segundoNumero);
 int resta(int primerNumero,int segundoNumero);
 int multiplicacion(int primerNumero, int segundoNumero);
 float division(int primerNumero, int segundoNumero);
+int calcularFactorial(int primerNumero,int segundoNumero);
 
 
 
@@ -47,6 +48,25 @@ int main(void)
             printf("\n la division entre %d y %d es %f :",primerNumero,segundoNumero,(float) resultado);
             break;
         case 5:
+            printf("\n usted eligio calcular el factorial");
+            resultado= calcularFactorial(primerNumero,segundoNumero);
+            printf("\n el factorial de %d y de %d es %d : ",primerNumero,segundoNumero,resultado);
+            break;
+
+        case 6:
+            printf("\ usted eligio calcular todas las operaciones");
+            resultado = suma(primerNumero,segundoNumero);
+            printf("\n la suma entre %d y %d es %d: ",primerNumero,segundoNumero,resultado);
+            resultado =resta(primerNumero,segundoNumero);
+            printf("\n la resta entre %d y %d es %d: ",primerNumero,segundoNumero,resultado);
+            resultado = multiplicacion(primerNumero,segundoNumero);
+            printf("\n la multiplicacion entre %d y %d es %d : ",primerNumero,segundoNumero,resultado);
+            resultado = division(primerNumero,segundoNumero);
+            printf("\n la division entre %d y %d es %f :",primerNumero,segundoNumero,(float) resultado);
+            resultado= calcularFactorial(primerNumero,segundoNumero);
+            printf("\n el factorial de %d es %d : ",primerNumero,segundoNumero,resultado);
+            break;
+        case 7:
             printf("\n eligio salir ");
 
             break;
@@ -59,14 +79,16 @@ int main(void)
 int indicarOperacion()
 {
     int operaciones;
-    if(operaciones!=5)
+    if(operaciones!=7)
     {
         printf("\n0 <calculadora> elija una operacion: ");
         printf("\n1 suma ");
         printf("\n2 resta ");
         printf("\n3 multiplicacion ");
         printf("\n4 division ");
-        printf("\n5 salir ");
+        printf("\n5 factorial ");
+        printf("\n6 calcular todas las operaciones ");
+        printf("\n7 salir");
         printf("\n elija una opcion : ");
         scanf("%d",&operaciones);
     }
@@ -105,6 +127,24 @@ float division(int primerNumero,int segundoNumero)
     float resultado;
     resultado=primerNumero/segundoNumero;
     return resultado;
+}
+int calcularFactorial(int primerNumero,int segundoNumero)
+{
+    int primerFactorial=1;
+    int segundoFactorial=1;
+    int resultado;
+    int i;
+    for(i=1;i<=primerNumero;i++)
+    {
+        primerFactorial *= i;
+    }
+        for(i=1;i<=segundoNumero;i++)
+    {
+        segundoFactorial *= i;
+    }
+    resultado=primerFactorial,segundoFactorial;
+    return resultado;
+
 }
 
 
