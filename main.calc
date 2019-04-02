@@ -1,0 +1,147 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "funciones.h"
+float pedirPrimerNumero(float *numeroIngresado);
+float pedirSegundoNumero(float *segundoNumeroIngresado);
+float  calularSuma(float numeroIngresado, float segundoNumeroIngresado, float *resultado);
+float calcularResta(float numeroIngresado,float segundoNumeroIngresado, float*resultado);
+float calcularDivision(float numeroIngresado, float segundoNumeroIngresado,float *resultado);
+float calcularMultiplicacion(float numeroIngresado, float segundoNumeroIngresado, float *resultado);
+float calcularFactorial(float numeroIngresado, float segundoNumeroIngresado, float *resultado);
+
+int main()
+{
+    char seguir='s';
+    int opcion=0;
+    float numeroIngresado;
+    float otroNumero;
+    float resultado;
+    while(seguir=='s')
+    {
+        printf("1- Ingresar 1er operando :\n");
+        printf("2- Ingresar 2do operando :\n");
+        printf("3- Calcular la suma :\n");
+        printf("4- Calcular la resta :\n");
+        printf("5- Calcular la division :\n");
+        printf("6- Calcular la multiplicacion :\n");
+        printf("7- Calcular el factorial (A!)\n");
+        printf("8- Calcular todas las operacione\n");
+        printf("9- Salir\n");
+
+        scanf("%d",&opcion);
+
+        switch(opcion)
+        {
+            case 1:
+                pedirPrimerNumero(&numeroIngresado);
+                break;
+            case 2:
+                pedirSegundoNumero(&otroNumero);
+                break;
+            case 3:
+                calularSuma(numeroIngresado, otroNumero,&resultado);
+                printf("\n la suma es %.2f : ",resultado);
+                break;
+            case 4:
+                calcularResta(numeroIngresado,otroNumero,&resultado);
+                printf("\n la resta es %.2f : ",resultado);
+                break;
+            case 5:
+                calcularDivision(numeroIngresado,otroNumero,&resultado);
+                printf("\n la division es %.2f : ",resultado);
+                break;
+            case 6:
+                calcularMultiplicacion(numeroIngresado,otroNumero,&resultado);
+                printf("\n la multiplicacion es %.2f :",resultado);
+                break;
+            case 7:
+                calcularFactorial(numeroIngresado,otroNumero,&resultado);
+                printf("\n el factorial es %.0f : ",resultado);
+                break;
+            case 8:
+                calularSuma(numeroIngresado, otroNumero,&resultado);
+                printf("\n la suma es %.2f : ",resultado);
+                calcularResta(numeroIngresado,otroNumero,&resultado);
+                printf("\n la resta es %.2f : ",resultado);
+                calcularDivision(numeroIngresado,otroNumero,&resultado);
+                printf("\n la division es %.2f : ",resultado);
+                calcularMultiplicacion(numeroIngresado,otroNumero,&resultado);
+                printf("\n la multiplicacion es %.2f :",resultado);
+                calcularFactorial(numeroIngresado,otroNumero,&resultado);
+                printf("\n el factorial es %.0f \n: ",resultado);
+
+                break;
+            case 9:
+                seguir = 'n';
+                break;
+        }
+
+
+   } return 0;
+}
+float pedirPrimerNumero(float *numeroIngresado)
+{
+
+    float unNumero;
+    printf("\n ingrese el primer operando :");
+    scanf("%f", &unNumero);
+    *numeroIngresado=unNumero;
+    return 0;
+}
+float pedirSegundoNumero(float *segundoNumeroIngresado)
+{
+    float otroNumero;
+    printf("\n ingrese el segundo operando :");
+    scanf("%f",&otroNumero);
+    *segundoNumeroIngresado=otroNumero;
+    return 0;
+
+}
+float calularSuma(float numeroIngresado, float segundoNumeroIngresado, float *resultado)
+{
+    printf("\n eligio sumar ");
+    *resultado= numeroIngresado + segundoNumeroIngresado;
+    return 0;
+}
+float calcularResta(float numeroIngresado,float segundoNumeroIngresado, float*resultado)
+{
+    printf("\n eligio restar ");
+    *resultado= numeroIngresado - segundoNumeroIngresado;
+    return 0;
+}
+float calcularDivision(float numeroIngresado, float segundoNumeroIngresado,float *resultado)
+{
+    if(segundoNumeroIngresado!=0)
+    {
+        printf("\n eligio dividir ");
+        *resultado= numeroIngresado/segundoNumeroIngresado;
+        return 0;
+    } else
+        {
+            printf("ERROR! reingrese segundo operando distinto de cero");
+        }
+}
+float calcularMultiplicacion(float numeroIngresado, float segundoNumeroIngresado, float *resultado)
+{
+    printf("\n eligio multiplicar ");
+    *resultado = numeroIngresado*segundoNumeroIngresado;
+    return 0;
+
+}
+float calcularFactorial(float numeroIngresado, float segundoNumeroIngresado, float *resultado)
+{
+    float factorial=1;
+    float i;
+
+    for(i=1;i<=numeroIngresado;i++)
+    {
+        factorial *= i;
+
+    }
+    *resultado=factorial;
+    return 0;
+
+
+
+}
+
