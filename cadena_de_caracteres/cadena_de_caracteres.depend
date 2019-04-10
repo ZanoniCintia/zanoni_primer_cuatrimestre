@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1554847620 source:/home/alumno/zanoni/cadena_de_caracteres/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
