@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1555005832 source:/home/cintia/zanoni/zanoni_primer_cuatrimestre/practica/main.c
+	<stdio.h>
+	<stdlib.h>
+

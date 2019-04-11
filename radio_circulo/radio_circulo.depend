@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1555008405 source:/home/cintia/zanoni/zanoni_primer_cuatrimestre/radio_circulo/main.c
+	<stdio.h>
+	<stdlib.h>
+
