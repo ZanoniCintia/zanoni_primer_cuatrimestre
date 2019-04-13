@@ -1,43 +1,74 @@
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "utn.h"
 
-
-
-
-
-/** \brief solicita un numero y devuleve el resultado
- * \param mensaje a ser mostrado
- * \return el numero ingresado
- *
- */
-int getInt(char mensaje[])
+int getString ( char* msg,
+                char* msgError,
+                int minimo,
+                int maximo,
+                int reintentos,
+                char* resultado)
 {
-    int auxiliar;
-    printf("%s",mensaje);
-    scanf("%d",&auxiliar);
-    return auxiliar;
+    int retorno = -1;
+    char bufferStr[4096];
+    if(msg != NULL && msgError != NULL && minimo < maximo && reintentos>=0 && resultado != NULL)
+    {
+
+        do
+        {
+            printf("%s",msg);
+            fgets(bufferStr,sizeof(bufferStr),stdin);
+            bufferStr[strlen(bufferStr)-1] = '\0';
+            if(strlen(bufferStr)>=minimo && strlen(bufferStr) <maximo)
+            {
+                strncpy(resultado,bufferStr,maximo);
+                retorno = 0;
+                break;
+            }
+            reintentos--;
+            printf("%s",msgError);
+        }while(reintentos>=0);
+    }
+    return retorno;
 }
-/**\brief  solicita un numero y devulve el resultado
- * \param mensaje a ser mostrado
- * \return el numero ingresado
- */
 
-float getFloat(char mensaje[])
+int getName (   char* msg,
+                char* msgError,
+                int minimo,
+                int maximo,
+                int reintentos,
+                char* resultado)
 {
-    int auxiliar;
-    printf("%s",mensaje);
-    scanf("%f",&auxiliar);
-    return auxiliar;
+    int retorno = -1;
+    char bufferStr[4096];
+    if(msg != NULL && msgError != NULL && minimo < maximo && reintentos>=0 && resultado != NULL)
+    {
+        if(!getString(msg,msgError,minimo,maximo,reintentos,bufferStr))
+        {
+            if(isValidName(bufferStr))
+            {
+                strncpy(resultado, bufferStr,maximo);
+                retorno = 0;
+            }
+        }
+
+    }
+    return retorno;
 }
-/** \brief solicita un caracter y devuelve el resultado
- * \param mensaje a ser mostrado
- * \return el caracter ingresado
- */
 
-char getchar(char mensaje[])
+
+int isValidName (char* cadena)
 {
-    char auxiliar;
-    printf("%s",amensaje);
-    fflush(stdin);
-    //fpurge(stdin);linux
-    scanf("%s",&auxiliar);
-    return auxiliar;
+    int retorno = TRUE;
+    int i;
+    for( i=0 ; cadena[i] != '\0'  ; i++)
+    {
+        if((cadena[i] > 'Z' || cadena[i] < 'A') && (cadena[i] > 'z' || cadena[i] < 'a')  )
+        {
+            retorno = FALSE;
+            break;
+        }
+    }
+    return retorno;
 }

@@ -1,28 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#define CANTIDAD 10
+#include "utn.h"
 
 int main()
 {
-    char nombre[CANTIDAD];
-    char buffer[CANTIDAD];
-    int i;
-
-    printf("\n ingrese nombre :");
-    fgets(buffer,sizeof(nombre),stdin);
-
-    for(i=0; buffer[i]!= '\0';i++)
+    char auxName[500] = "test";
+    if(getName( "Nombre?: ",
+                "Error",
+                2,
+                5,
+                2,
+                auxName) == 0)
     {
-        printf("%d",i);
-        if((buffer[i] <'A' || buffer[i] >'Z') && (buffer[i] <'a' || buffer[i] >'z'))
-        {
-            printf("error");
-            break;
-        }
+        printf("OK: %s",auxName);
     }
-
-
+    else
+    {
+        printf("ER: %s",auxName);
+    }
     return 0;
 }
-
