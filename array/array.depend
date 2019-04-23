@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1555030248 source:c:\zanoni\zanoni_primer_cuatrimestre\array\utn.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+
+1555023504 c:\zanoni\zanoni_primer_cuatrimestre\array\utn.h
+
+1556051717 source:c:\zanoni\zanoni_primer_cuatrimestre\array\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
