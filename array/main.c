@@ -56,7 +56,7 @@ int nombreDuplicado(char arrayStrn [][50],char* nombre,int* nombreExistente,int 
     }
     return retorno;
 }
-int altaPersonal(char* msg,char* msgError,int minimo,int maximo,int limite,char array[][],int reintentos)
+int altaPersonal(char* msg,char* msgError,int minimo,int maximo,int limite,char array[][50],int reintentos)
 {
     int retorno=-1;
     int posicionRepetida = -1;
@@ -73,10 +73,14 @@ int altaPersonal(char* msg,char* msgError,int minimo,int maximo,int limite,char 
                 strncpy(array[posicionVacia(array,limite)],buffer,maximo);
                 retorno =0;
             }
+            else
+            {
+                printf("%s",msgError);
+            }
         }
 
     }
-
+    return retorno;
 
 }
 int main()

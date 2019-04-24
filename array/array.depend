@@ -13,3 +13,17 @@
 	<string.h>
 	"utn.h"
 
+1556055301 source:/home/alumno/zanoni/zanoni_primer_cuatrimestre/array/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1556055215 /home/alumno/zanoni/zanoni_primer_cuatrimestre/array/utn.h
+
+1556055356 source:/home/alumno/zanoni/zanoni_primer_cuatrimestre/array/utn.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+
