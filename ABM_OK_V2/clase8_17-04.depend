@@ -112,3 +112,42 @@
 	"funciones_string.h"
 	"empleado.h"
 
+1556229117 source:/home/alumno/zanoni/zanoni_primer_cuatrimestre/ABM_OK_V2/empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"funciones_string.h"
+	"empleado.h"
+
+1556229117 /home/alumno/zanoni/zanoni_primer_cuatrimestre/ABM_OK_V2/funciones_string.h
+	"empleado.h"
+
+1556229117 /home/alumno/zanoni/zanoni_primer_cuatrimestre/ABM_OK_V2/empleado.h
+
+1556229117 source:/home/alumno/zanoni/zanoni_primer_cuatrimestre/ABM_OK_V2/funciones_string.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"funciones_string.h"
+
+1556237738 source:/home/alumno/zanoni/zanoni_primer_cuatrimestre/ABM_OK_V2/main.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"pantalla.h"
+	"funciones_string.h"
+
+1556238939 /home/alumno/zanoni/zanoni_primer_cuatrimestre/ABM_OK_V2/pantalla.h
+
+1556239807 source:/home/alumno/zanoni/zanoni_primer_cuatrimestre/ABM_OK_V2/pantalla.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	"pantalla.h"
+	"funciones_string.h"
+
